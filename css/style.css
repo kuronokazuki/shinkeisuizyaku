@@ -1,0 +1,280 @@
+/*ボタン*/
+.bn53_e {
+  background-color: #b81515;
+  color: #FFFFFF;
+  padding: 3px 20px;
+  width: 120px;
+  animation: bn53bounce 3s infinite;
+  cursor: pointer;
+}
+
+.bn53_n {
+  background-color: #b81515;
+  color: #FFFFFF;
+  padding: 3px 20px;
+  width: 120px;
+  animation: bn53bounce 4s infinite;
+  cursor: pointer;
+}
+
+.bn53_d {
+  background-color: #b81515;
+  color: #FFFFFF;
+  padding: 3px 20px;
+  width: 120px;
+  animation: bn53bounce 5s infinite;
+  cursor: pointer;
+}
+
+.bn53_card_0 {
+  animation: bn53bounce_card 1s infinite;
+}
+
+.bn53_card{
+    animation: bn53bounce_card 2s infinite;
+}
+
+@keyframes bn53bounce_card {
+  0%,
+  20% {
+    transform: scale(1) rotate(-90%);
+  }
+
+  40% {
+    transform: scale(1) rotate(90%);
+  }
+
+  60% {
+    transform: scale(1) rotate(95%);
+  }
+
+  100% {
+    transform: scale(1) rotate(100%);
+  }
+
+}
+
+@keyframes bn53bounce {
+  5%,
+  50% {
+    transform: scale(1);
+  }
+
+  10% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1);
+  }
+
+  20% {
+    transform: scale(1) rotate(-5deg);
+  }
+
+  25% {
+    transform: scale(1) rotate(5deg);
+  }
+
+  30% {
+    transform: scale(1) rotate(-3deg);
+  }
+
+  35% {
+    transform: scale(1) rotate(2deg);
+  }
+
+  40% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+/*背景色*/
+.bg_pattern {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffe9a7;
+  opacity: 0.4;
+  z-index: -1;
+}
+.Lines_v3 {
+  background-size: 40px 40px;
+  background-image:  repeating-linear-gradient(0deg, #ffc107, #ffc107 2px, #ffe9a7 2px, #ffe9a7);
+}
+
+/*ロード画面*/
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background-color: #F3F3F3;
+}
+.loading {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #fdfdfd;
+}
+.loading.hide {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 500ms;
+}
+.loading .circle {
+  display: block;
+  position: relative;
+  top: calc( 50% - 20px );
+  width: 40px;
+  height: 40px;
+  margin: 0 auto;
+  border: 8px solid #e0e0e0;
+  border-top: 7px solid #ffcccc;
+  border-radius: 50px;
+  animation: loading 700ms linear 0ms infinite normal both;
+}
+@keyframes loading {
+  0% { transform: rotate( 0deg ); }
+  100% { transform: rotate( 360deg ); }
+}
+
+/*ゲーム*/
+#panel {
+    display: block;
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    position:relative;
+}
+
+.card {
+    width: 60px;
+    height: 80px;
+    background-color: #FFFFFF;
+    line-height: 80px;
+    border: 1px solid silver;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 26px;
+    margin: 7px;
+    font-weight: bold;
+    box-shadow: gray 2px 1px;
+    float: left;
+    cursor: pointer;
+    position:relative;
+}
+/* 裏の状態 */
+.back {
+    background-image: url('../img/back.png');
+    background-size: 60px 80px;
+    position:relative;
+}
+/* 終了時 */
+.finish {
+    opacity: 0;
+    cursor: default;
+    position:relative;
+}
+/* 経過秒数 */
+#result {
+    font-size: 25px;
+    font-weight: bold;
+    top: 30px;
+    position: relative;
+}
+
+/*画像表示*/
+#image_place {
+  height: 100%;
+  top:0px;
+  object-fit: cover;
+  position:absolute;
+  z-index: 1;
+}
+
+#game_image_place{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#fire_image_place{
+    width: 100%;
+}
+
+#title{
+    margin-top: 40px;
+    font-size: 50px;
+}
+
+#eas{
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#nor{
+    font-size: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#dif{
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#game_comment_image{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #FFFFFF;
+}
+
+#game_comment{
+    align-self: flex-end;
+}
+
+/*吹き出し*/
+.sb {
+     position: relative;
+     display: inline-block;
+     width: 200px; 
+     height: 50px;
+     text-align: center;
+     color:#FFF;
+     padding: 5px;
+     background-color: #f39800;
+     border-radius: 5px;
+}
+.sb:before {
+     content: '';
+     position: absolute;
+     display: block;
+     z-index: 1;
+     border-style: solid;
+     border-color: transparent #f39800;
+     border-width: 10px 0 10px 10px;
+     top: 50%;
+     right: -10px;
+     margin-top: -10px;
+}
+
+.sb_top{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+    margin-top: 30px;
+}
